@@ -2,7 +2,7 @@ package edu.brandeis.cosi12b.stringlistdemo;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList<E> extends AbstractList<E> implements List<E> {
+public class LinkedList<E extends Comparable<E>> extends AbstractList<E> implements List<E> {
   private ListNode<E> front;
 
   public LinkedList() {
@@ -53,7 +53,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E> {
 
   // Removes and returns the first value.
   // Throws a NoSuchElementException on empty list.
-  public String remove() {
+  public E remove() {
     if (front == null) {
       throw new NoSuchElementException();
     } else {

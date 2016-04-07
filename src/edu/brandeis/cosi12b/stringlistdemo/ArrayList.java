@@ -1,6 +1,6 @@
 package edu.brandeis.cosi12b.stringlistdemo;
 
-public class ArrayList<E> extends AbstractList<E> implements List<E> {
+public class ArrayList<E extends Comparable<E>>  extends AbstractList<E> implements List<E> {
   private E[] list;
   private int size;
   private int capacity;
@@ -79,7 +79,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
     return size() == 0;
   }
 
-  public int indexOf(String value) {
+  public int indexOf(E value) {
     for (int i = 0; i < size; i++) {
       if (list[i] == value)
         return i;
@@ -87,7 +87,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
     return -1;
   }
 
-  public boolean contains(String value) {
+  public boolean contains(E value) {
     return (indexOf(value) != -1);
   }
 
@@ -95,11 +95,4 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
   public void add(int index, E value) {
     // TODO Auto-generated method stub
   }
-
-  @Override
-  public int indexOf(E value) {
-    // TODO Auto-generated method stub
-    return 0;
-  }
-
 }
