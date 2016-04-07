@@ -14,16 +14,16 @@ public class StringListDemo {
   }
 
   static void example1() {
-    StringList l1 = new StringArrayList();
+    List l1 = new ArrayList();
     process(l1);
     System.out.println("Arraylist: " + l1);
 
-    StringList l2 = new StringLinkedList();
+    List<String> l2 = new LinkedList<String>();
     process(l2);
     System.out.println("Linkedlist: " + l2);
   }
 
-  public static void process(StringList l) {
+  public static void process(List l) {
     l.add("Schwarzentruber");
     l.add("Shapiro");
     l.add("Shen");

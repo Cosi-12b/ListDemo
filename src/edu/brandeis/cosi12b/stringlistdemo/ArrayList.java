@@ -1,16 +1,17 @@
 package edu.brandeis.cosi12b.stringlistdemo;
 
-public class StringArrayList implements StringList {
-  private String[] list;
+public class ArrayList<E> extends AbstractList<E> implements List<E> {
+  private E[] list;
   private int size;
   private int capacity;
 
-  public StringArrayList() {
+  public ArrayList() {
     this(20);
   }
 
-  public StringArrayList(int initialCapacity) {
-    list = new String[initialCapacity];
+  @SuppressWarnings("unchecked")
+  public ArrayList(int initialCapacity) {
+    list = (E[]) (new Object[initialCapacity]);
     size = 0;
     capacity = initialCapacity;
   }
@@ -23,7 +24,7 @@ public class StringArrayList implements StringList {
     return size;
   }
 
-  public void add(String val) {
+  public void add(E val) {
     list[size] = val;
     size++;
   }
@@ -40,7 +41,7 @@ public class StringArrayList implements StringList {
     return (s.toString());
   }
 
-  public void set(int index, String value) {
+  public void set(int index, E value) {
     expandIfNecessary(index);
     for (int i = size; i > index; i--) {
       list[i] = list[i - 1];
@@ -50,18 +51,19 @@ public class StringArrayList implements StringList {
       size = index + 1;
   }
 
+  @SuppressWarnings("unchecked")
   private void expandIfNecessary(int index) {
     if (index < capacity)
       return;
     int newCapacity = capacity * 2 + index;
-    String[] oldArray = list;
-    list = new String[newCapacity];
+    E[] oldArray = list;
+    list = (E[]) (new Object[newCapacity]);
     for (int i = 0; i < size; i++)
       list[i] = oldArray[i];
     capacity = newCapacity;
   }
 
-  public String get(int index) {
+  public E get(int index) {
     if (index < 0 || index >= size)
       throw new ArrayIndexOutOfBoundsException("i: " + index + " s: " + size);
     return list[index];
@@ -90,8 +92,14 @@ public class StringArrayList implements StringList {
   }
 
   @Override
-  public void add(int index, String value) {
+  public void add(int index, E value) {
     // TODO Auto-generated method stub
+  }
+
+  @Override
+  public int indexOf(E value) {
+    // TODO Auto-generated method stub
+    return 0;
   }
 
 }

@@ -2,33 +2,33 @@ package edu.brandeis.cosi12b.stringlistdemo;
 
 import java.util.NoSuchElementException;
 
-public class StringLinkedList implements StringList {
-  private StringListNode front;
+public class LinkedList<E> extends AbstractList<E> implements List<E> {
+  private ListNode<E> front;
 
-  public StringLinkedList() {
+  public LinkedList() {
     front = null;
   }
 
   // Adds the given value to the end of the list.
-  public void add(String value) {
+  public void add(E value) {
     if (front == null) {
       // adding to an empty list
-      front = new StringListNode(value);
+      front = new ListNode<E>(value);
     } else {
       // adding to the end of an existing list
-      StringListNode current = front;
+      ListNode<E> current = front;
       while (current.next != null) {
         current = current.next;
       }
-      current.next = new StringListNode(value);
+      current.next = new ListNode<E>(value);
     }
   }
 
   // Returns value in list at given index
   // Precondition: 0 <= index < size()
   // Pretty inefficient, eh?
-  public String get(int index) {
-    StringListNode current = front;
+  public E get(int index) {
+    ListNode<E> current = front;
     for (int i = 0; i < index; i++) {
       current = current.next;
     }
@@ -37,17 +37,17 @@ public class StringLinkedList implements StringList {
 
   // Inserts the given value at the given index.
   // Precondition: 0 <= index <= size()
-  public void add(int index, String value) {
+  public void add(int index, E value) {
     if (index == 0) {
       // adding to an empty list
-      front = new StringListNode(value, front);
+      front = new ListNode<E>(value, front);
     } else {
       // inserting into an existing list
-      StringListNode current = front;
+      ListNode<E> current = front;
       for (int i = 0; i < index - 1; i++) {
         current = current.next;
       }
-      current.next = new StringListNode(value, current.next);
+      current.next = new ListNode<E>(value, current.next);
     }
   }
 
@@ -57,7 +57,7 @@ public class StringLinkedList implements StringList {
     if (front == null) {
       throw new NoSuchElementException();
     } else {
-      String result = front.word;
+      E result = front.word;
       front = front.next;
       return result;
     }
@@ -71,7 +71,7 @@ public class StringLinkedList implements StringList {
       front = front.next;
     } else {
       // removing from elsewhere in the list
-      StringListNode current = front;
+      ListNode<E> current = front;
       for (int i = 0; i < index - 1; i++) {
         current = current.next;
       }
@@ -84,7 +84,7 @@ public class StringLinkedList implements StringList {
       return "[]";
     } else {
       String result = "[" + front.word;
-      StringListNode current = front.next;
+      ListNode<E> current = front.next;
       while (current != null) {
         result += ", " + current.word;
         current = current.next;
@@ -96,7 +96,7 @@ public class StringLinkedList implements StringList {
 
   public int size() {
     int count = 0;
-    StringListNode current = front;
+    ListNode<E> current = front;
     while (current != null) {
       current = current.next;
       count++;
@@ -104,38 +104,25 @@ public class StringLinkedList implements StringList {
     return count;
   }
 
-  public int indexOf(String value) {
-    int index = 0;
-    StringListNode current = front;
-    while (current != null) {
-      if (current.word == value) {
-        return index;
-      }
-      index++;
-      current = current.next;
-    }
-    return -1;
-  }
-
   // Adds given value to list in sorted order.
   // Precondition: Existing elements are sorted
 
-  public void addSorted(String value) {
+  public void addSorted(E value) {
     if (front == null || value.compareTo(front.word) <= 0) {
       // insert at front of list
-      front = new StringListNode(value, front);
+      front = new ListNode<E>(value, front);
     } else {
       // insert in middle of list
-      StringListNode current = front;
+      ListNode<E> current = front;
       while (current.next != null && current.next.word.compareTo(value) < 0) {
         current = current.next;
       }
-      current.next = new StringListNode(value, current.next);
+      current.next = new ListNode<E>(value, current.next);
     }
   }
 
   public int length() {
-    StringListNode current = front;
+    ListNode<E> current = front;
     int count = 0;
     while (current != null) {
       count++;
@@ -149,8 +136,15 @@ public class StringLinkedList implements StringList {
   }
 
   @Override
-  public void set(int index, String value) {
-    
+  public int indexOf(E value) {
+    // TODO Auto-generated method stub
+    return 0;
+  }
+
+  @Override
+  public void set(int index, E value) {
+    // TODO Auto-generated method stub
+
   }
 
 }

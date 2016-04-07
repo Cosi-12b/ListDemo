@@ -35,7 +35,7 @@ public class TestSuite {
      * Test Suites
      */
     public boolean linkedListtest1() {
-      StringLinkedList l = new StringLinkedList();
+      LinkedList<String> l = new LinkedList<String>();
       if (l.length() != 0) {
         return error("Test1");
       } else
@@ -43,7 +43,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest2() {
-      StringLinkedList l = new StringLinkedList();
+      LinkedList<String> l = new LinkedList<String>();
       l.add("Seth");
       if (l.length() != 1) {
         return error("Test2");
@@ -52,7 +52,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest3() {
-      StringLinkedList l = new StringLinkedList();
+      LinkedList<String> l = new LinkedList<String>();
       l.add("Seth");
       l.add("Elana");
       if (!l.toString().equals("[Seth, Elana]")) {
@@ -63,7 +63,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest4() {
-      StringLinkedList list1 = new StringLinkedList();
+      LinkedList<String> list1 = new LinkedList<String>();
       list1.add("Shuyuan");
       list1.add("Nora");
       list1.add("Qifu");
@@ -76,7 +76,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest5() {
-      StringLinkedList list1 = new StringLinkedList();
+      LinkedList<String> list1 = new LinkedList<String>();
       list1.add("Shuyuan");
       list1.add("Nora");
       list1.add("Qifu");
@@ -90,7 +90,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest6() {
-      StringLinkedList list1 = new StringLinkedList();
+      LinkedList<String> list1 = new LinkedList<String>();
       list1.add("Shuyuan");
       list1.add("Nora");
       list1.add("Qifu");
@@ -102,7 +102,7 @@ public class TestSuite {
     }
 
     public boolean linkedListtest7() {
-      StringLinkedList list1 = new StringLinkedList();
+      LinkedList<String> list1 = new LinkedList<String>();
       list1.add("Shuyuan");
       list1.add("Nora");
       list1.add("Qifu");
@@ -119,7 +119,7 @@ public class TestSuite {
    * Test Suites
    */
   public boolean arrayListtest1() {
-    StringArrayList a = new StringArrayList();
+    ArrayList a = new ArrayList();
     if (a.size() != 0) {
       return error("Test1");
     } else
@@ -127,7 +127,7 @@ public class TestSuite {
   }
 
   public boolean arrayListtest2() {
-    StringArrayList a = new StringArrayList();
+    ArrayList a = new ArrayList();
     a.add("Coco");
     if (a.size() != 1) {
       return error("Test2");
@@ -136,7 +136,7 @@ public class TestSuite {
   }
 
   public boolean arrayListtest3() {
-    StringArrayList a = new StringArrayList();
+    ArrayList a = new ArrayList();
     a.add("Skye");
     a.add("Zachary");
     if (!a.toString().equals("[Skye, Zachary]")) {
@@ -147,7 +147,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest4() {
-    StringArrayList list1= new StringArrayList();
+    ArrayList list1= new ArrayList();
     list1.add("Seth");
     list1.add("Austin");
     list1.add("Claire");
@@ -165,7 +165,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest5() {
-    StringArrayList list1= new StringArrayList();
+    ArrayList list1= new ArrayList();
     list1.add("Seth");
     list1.add("Austin");
     list1.add("Claire");
@@ -179,7 +179,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest6() {
-    StringArrayList list1= new StringArrayList();
+    ArrayList list1= new ArrayList();
     list1.add("Seth");
     list1.add("Austin");
     list1.add("Claire");
@@ -194,7 +194,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest7() {
-    StringArrayList list1= new StringArrayList(20);
+    ArrayList list1= new ArrayList(20);
     if (list1.size() != 0)
         return error("test7: incorrect length");
     if (list1.capacity() != 20)
@@ -203,7 +203,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest8() {
-    StringArrayList list1 = new StringArrayList(20);
+    ArrayList list1 = new ArrayList(20);
     list1.add("Chloe");
     if (list1.get(0) != "Chloe")
       return error("test8: get failure");
@@ -216,7 +216,7 @@ public class TestSuite {
   }
   
   public boolean arrayListtest9() {
-    StringArrayList list1 = new StringArrayList(20);
+    ArrayList<String> list1 = new ArrayList<String>(20);
     list1.set(30, "McGregor");
     try {
       String value = list1.get(30);
