@@ -1,6 +1,6 @@
-package edu.brandeis.cosi12b.stringlistdemo;
+package edu.brandeis.cosi12b.listdemo;
 
-public class ArrayList<E extends Comparable<E>>  extends AbstractList<E> implements List<E> {
+public class ArrayList<E extends Comparable<E>> extends AbstractList<E> implements List<E> {
   private E[] list;
   private int size;
   private int capacity;
@@ -11,7 +11,8 @@ public class ArrayList<E extends Comparable<E>>  extends AbstractList<E> impleme
 
   @SuppressWarnings("unchecked")
   public ArrayList(int initialCapacity) {
-    list = (E[]) (new Object[initialCapacity]);
+    list = (E[]) new Comparable<?>[initialCapacity];
+
     size = 0;
     capacity = initialCapacity;
   }
@@ -57,7 +58,7 @@ public class ArrayList<E extends Comparable<E>>  extends AbstractList<E> impleme
       return;
     int newCapacity = capacity * 2 + index;
     E[] oldArray = list;
-    list = (E[]) (new Object[newCapacity]);
+    list = (E[]) (new Comparable<?>[newCapacity]);
     for (int i = 0; i < size; i++)
       list[i] = oldArray[i];
     capacity = newCapacity;

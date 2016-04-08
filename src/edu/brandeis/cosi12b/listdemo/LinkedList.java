@@ -1,4 +1,4 @@
-package edu.brandeis.cosi12b.stringlistdemo;
+package edu.brandeis.cosi12b.listdemo;
 
 import java.util.NoSuchElementException;
 

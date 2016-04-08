@@ -1,10 +1,10 @@
-package edu.brandeis.cosi12b.stringlistdemo;
+package edu.brandeis.cosi12b.listdemo;
 
-public class StringListDemo {
+public class ListDemo {
 
   public static void main(String[] args) {
     runTests();
-    example1();
+//    example1();
   }
 
   static void runTests() {
@@ -14,7 +14,7 @@ public class StringListDemo {
   }
 
   static void example1() {
-    List l1 = new ArrayList();
+    List<String> l1 = new ArrayList<String>();
     process(l1);
     System.out.println("Arraylist: " + l1);
 
@@ -23,7 +23,7 @@ public class StringListDemo {
     System.out.println("Linkedlist: " + l2);
   }
 
-  public static void process(List l) {
+  public static void process(List<String> l) {
     l.add("Schwarzentruber");
     l.add("Shapiro");
     l.add("Shen");

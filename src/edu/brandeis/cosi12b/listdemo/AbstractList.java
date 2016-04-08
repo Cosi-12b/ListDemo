@@ -1,6 +1,6 @@
-package edu.brandeis.cosi12b.stringlistdemo;
+package edu.brandeis.cosi12b.listdemo;
 
-public abstract class AbstractList<E> implements List<E> {
+public abstract class AbstractList<E extends Comparable<E>> implements List<E> {
   public void add(E value) {
     add(size(), value);
   }

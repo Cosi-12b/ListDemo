@@ -1,4 +1,4 @@
-package edu.brandeis.cosi12b.stringlistdemo;
+package edu.brandeis.cosi12b.listdemo;
 
 //  represents an abstraction of a list of Strings
 
